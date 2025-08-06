@@ -598,8 +598,8 @@ Name: count, dtype: int64
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>track_id            0
 artists             0
-album_name          1
-track_name          1
+album_name          0
+track_name          0
 popularity          0
 duration_ms         0
 explicit            0
@@ -620,7 +620,7 @@ dtype: int64
 track_id            0
 artists             0
 album_name          0
-track_name          1
+track_name          0
 popularity          0
 duration_ms         0
 explicit            0
@@ -661,6 +661,82 @@ track_genre         0
 dtype: int64
 </pre></div>
 </div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Distribución de todas las variables</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_distributions</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">columns</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">columns</span><span class="p">):</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Distribución de </span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">numeric_cols</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;int64&#39;</span><span class="p">,</span> <span class="s1">&#39;float64&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">plot_distributions</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">numeric_cols</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c:\Users\Administrador\miniconda3\envs\ml_venv\lib\site-packages\seaborn\_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
+c:\Users\Administrador\miniconda3\envs\ml_venv\lib\site-packages\seaborn\_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
+C:\Users\Administrador\AppData\Local\Temp\ipykernel_20408\3588578557.py:8: UserWarning: The figure layout has changed to tight
+  plt.tight_layout()
+c:\Users\Administrador\miniconda3\envs\ml_venv\lib\site-packages\seaborn\_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
+C:\Users\Administrador\AppData\Local\Temp\ipykernel_20408\3588578557.py:8: UserWarning: The figure layout has changed to tight
+  plt.tight_layout()
+c:\Users\Administrador\miniconda3\envs\ml_venv\lib\site-packages\seaborn\_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
+C:\Users\Administrador\AppData\Local\Temp\ipykernel_20408\3588578557.py:8: UserWarning: The figure layout has changed to tight
+  plt.tight_layout()
+c:\Users\Administrador\miniconda3\envs\ml_venv\lib\site-packages\seaborn\_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
+C:\Users\Administrador\AppData\Local\Temp\ipykernel_20408\3588578557.py:8: UserWarning: The figure layout has changed to tight
+  plt.tight_layout()
+c:\Users\Administrador\miniconda3\envs\ml_venv\lib\site-packages\seaborn\_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
+C:\Users\Administrador\AppData\Local\Temp\ipykernel_20408\3588578557.py:8: UserWarning: The figure layout has changed to tight
+  plt.tight_layout()
+c:\Users\Administrador\miniconda3\envs\ml_venv\lib\site-packages\seaborn\_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
+C:\Users\Administrador\AppData\Local\Temp\ipykernel_20408\3588578557.py:8: UserWarning: The figure layout has changed to tight
+  plt.tight_layout()
+c:\Users\Administrador\miniconda3\envs\ml_venv\lib\site-packages\seaborn\_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
+C:\Users\Administrador\AppData\Local\Temp\ipykernel_20408\3588578557.py:8: UserWarning: The figure layout has changed to tight
+  plt.tight_layout()
+c:\Users\Administrador\miniconda3\envs\ml_venv\lib\site-packages\seaborn\_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
+C:\Users\Administrador\AppData\Local\Temp\ipykernel_20408\3588578557.py:8: UserWarning: The figure layout has changed to tight
+  plt.tight_layout()
+c:\Users\Administrador\miniconda3\envs\ml_venv\lib\site-packages\seaborn\_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
+C:\Users\Administrador\AppData\Local\Temp\ipykernel_20408\3588578557.py:8: UserWarning: The figure layout has changed to tight
+  plt.tight_layout()
+c:\Users\Administrador\miniconda3\envs\ml_venv\lib\site-packages\seaborn\_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
+C:\Users\Administrador\AppData\Local\Temp\ipykernel_20408\3588578557.py:8: UserWarning: The figure layout has changed to tight
+  plt.tight_layout()
+c:\Users\Administrador\miniconda3\envs\ml_venv\lib\site-packages\seaborn\_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
+C:\Users\Administrador\AppData\Local\Temp\ipykernel_20408\3588578557.py:8: UserWarning: The figure layout has changed to tight
+  plt.tight_layout()
+c:\Users\Administrador\miniconda3\envs\ml_venv\lib\site-packages\seaborn\_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
+C:\Users\Administrador\AppData\Local\Temp\ipykernel_20408\3588578557.py:8: UserWarning: The figure layout has changed to tight
+  plt.tight_layout()
+c:\Users\Administrador\miniconda3\envs\ml_venv\lib\site-packages\seaborn\_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
+C:\Users\Administrador\AppData\Local\Temp\ipykernel_20408\3588578557.py:8: UserWarning: The figure layout has changed to tight
+  plt.tight_layout()
+</pre></div>
+</div>
+<img alt="_images/5b2e30b3bd409311e85e463fe632a01274715f2df8e692a5093e2a14e277ed40.png" src="_images/5b2e30b3bd409311e85e463fe632a01274715f2df8e692a5093e2a14e277ed40.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -837,6 +913,57 @@ Hay una pequeña dificultad para superar este umbral pues las canciones con 0 po
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/a78598a50c6fcf6fe5ececf1b5e3d8890ad9d2f9704fd6a46253d1e1564b4c6f.png" src="_images/a78598a50c6fcf6fe5ececf1b5e3d8890ad9d2f9704fd6a46253d1e1564b4c6f.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Datos atípicos</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.decomposition</span><span class="w"> </span><span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.ensemble</span><span class="w"> </span><span class="kn">import</span> <span class="n">RandomForestRegressor</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_outliers</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">columns</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">columns</span><span class="p">):</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">])</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Boxplot de </span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">numeric_cols</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;int64&#39;</span><span class="p">,</span> <span class="s1">&#39;float64&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">plot_outliers</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">numeric_cols</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Administrador\AppData\Local\Temp\ipykernel_20408\1455638427.py:11: UserWarning: The figure layout has changed to tight
+  plt.tight_layout()
+C:\Users\Administrador\AppData\Local\Temp\ipykernel_20408\1455638427.py:11: UserWarning: The figure layout has changed to tight
+  plt.tight_layout()
+C:\Users\Administrador\AppData\Local\Temp\ipykernel_20408\1455638427.py:11: UserWarning: The figure layout has changed to tight
+  plt.tight_layout()
+C:\Users\Administrador\AppData\Local\Temp\ipykernel_20408\1455638427.py:11: UserWarning: The figure layout has changed to tight
+  plt.tight_layout()
+C:\Users\Administrador\AppData\Local\Temp\ipykernel_20408\1455638427.py:11: UserWarning: The figure layout has changed to tight
+  plt.tight_layout()
+C:\Users\Administrador\AppData\Local\Temp\ipykernel_20408\1455638427.py:11: UserWarning: The figure layout has changed to tight
+  plt.tight_layout()
+C:\Users\Administrador\AppData\Local\Temp\ipykernel_20408\1455638427.py:11: UserWarning: The figure layout has changed to tight
+  plt.tight_layout()
+C:\Users\Administrador\AppData\Local\Temp\ipykernel_20408\1455638427.py:11: UserWarning: The figure layout has changed to tight
+  plt.tight_layout()
+C:\Users\Administrador\AppData\Local\Temp\ipykernel_20408\1455638427.py:11: UserWarning: The figure layout has changed to tight
+  plt.tight_layout()
+C:\Users\Administrador\AppData\Local\Temp\ipykernel_20408\1455638427.py:11: UserWarning: The figure layout has changed to tight
+  plt.tight_layout()
+C:\Users\Administrador\AppData\Local\Temp\ipykernel_20408\1455638427.py:11: UserWarning: The figure layout has changed to tight
+  plt.tight_layout()
+C:\Users\Administrador\AppData\Local\Temp\ipykernel_20408\1455638427.py:11: UserWarning: The figure layout has changed to tight
+  plt.tight_layout()
+C:\Users\Administrador\AppData\Local\Temp\ipykernel_20408\1455638427.py:11: UserWarning: The figure layout has changed to tight
+  plt.tight_layout()
+</pre></div>
+</div>
+<img alt="_images/64d7ecff512c400dfa0fa3b6489492c1f2b043cd85693f9cb4e8dbdbc754f27d.png" src="_images/64d7ecff512c400dfa0fa3b6489492c1f2b043cd85693f9cb4e8dbdbc754f27d.png" />
 </div>
 </div>
 <div class="cell docutils container">
