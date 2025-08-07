@@ -949,6 +949,9 @@ dtype: int64
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.decomposition</span><span class="w"> </span><span class="kn">import</span> <span class="n">PCA</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.ensemble</span><span class="w"> </span><span class="kn">import</span> <span class="n">RandomForestRegressor</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">UserWarning</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">plot_outliers</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">columns</span><span class="p">):</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">columns</span><span class="p">):</span>
@@ -963,34 +966,6 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Administrador\AppData\Local\Temp\ipykernel_31364\1949587541.py:11: UserWarning: The figure layout has changed to tight
-  plt.tight_layout()
-C:\Users\Administrador\AppData\Local\Temp\ipykernel_31364\1949587541.py:11: UserWarning: The figure layout has changed to tight
-  plt.tight_layout()
-C:\Users\Administrador\AppData\Local\Temp\ipykernel_31364\1949587541.py:11: UserWarning: The figure layout has changed to tight
-  plt.tight_layout()
-C:\Users\Administrador\AppData\Local\Temp\ipykernel_31364\1949587541.py:11: UserWarning: The figure layout has changed to tight
-  plt.tight_layout()
-C:\Users\Administrador\AppData\Local\Temp\ipykernel_31364\1949587541.py:11: UserWarning: The figure layout has changed to tight
-  plt.tight_layout()
-C:\Users\Administrador\AppData\Local\Temp\ipykernel_31364\1949587541.py:11: UserWarning: The figure layout has changed to tight
-  plt.tight_layout()
-C:\Users\Administrador\AppData\Local\Temp\ipykernel_31364\1949587541.py:11: UserWarning: The figure layout has changed to tight
-  plt.tight_layout()
-C:\Users\Administrador\AppData\Local\Temp\ipykernel_31364\1949587541.py:11: UserWarning: The figure layout has changed to tight
-  plt.tight_layout()
-C:\Users\Administrador\AppData\Local\Temp\ipykernel_31364\1949587541.py:11: UserWarning: The figure layout has changed to tight
-  plt.tight_layout()
-C:\Users\Administrador\AppData\Local\Temp\ipykernel_31364\1949587541.py:11: UserWarning: The figure layout has changed to tight
-  plt.tight_layout()
-C:\Users\Administrador\AppData\Local\Temp\ipykernel_31364\1949587541.py:11: UserWarning: The figure layout has changed to tight
-  plt.tight_layout()
-C:\Users\Administrador\AppData\Local\Temp\ipykernel_31364\1949587541.py:11: UserWarning: The figure layout has changed to tight
-  plt.tight_layout()
-C:\Users\Administrador\AppData\Local\Temp\ipykernel_31364\1949587541.py:11: UserWarning: The figure layout has changed to tight
-  plt.tight_layout()
-</pre></div>
-</div>
 <img alt="_images/e872889b1476bea34b107ac19c30122c7186623317923207a34388cb4cf3fb91.png" src="_images/e872889b1476bea34b107ac19c30122c7186623317923207a34388cb4cf3fb91.png" />
 </div>
 </div>
