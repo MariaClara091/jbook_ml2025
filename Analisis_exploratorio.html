@@ -1067,7 +1067,7 @@ Variables NO normales (p &lt; 0.05): [&#39;popularity&#39;, &#39;duration_ms&#39
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Analizando géneros: 100%|██████████| 114/114 [00:03&lt;00:00, 37.17it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Analizando géneros: 100%|██████████| 114/114 [00:03&lt;00:00, 37.23it/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=== Resultados de Normalidad por Género y Variable ===
@@ -1238,11 +1238,7 @@ singer-songwriter       energy 0.055084     Normal
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c:\Users\Administrador\miniconda3\envs\ml_venv\lib\site-packages\seaborn\_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
-  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
-</pre></div>
-</div>
-<img alt="_images/85c7453700c8823efbd64e90baadc7b4a359d32b4ed7165d18cb490c2cc3c5ad.png" src="_images/85c7453700c8823efbd64e90baadc7b4a359d32b4ed7165d18cb490c2cc3c5ad.png" />
+<img alt="_images/025db44b3f11b28a00fd02542abb2c9903e395192acea4af8b6c1fbe9bd57e85.png" src="_images/025db44b3f11b28a00fd02542abb2c9903e395192acea4af8b6c1fbe9bd57e85.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Estadísticas de popularidad:
 count    113550.000000
 mean         33.324139
@@ -1255,7 +1251,7 @@ max         100.000000
 Name: popularity, dtype: float64
 </pre></div>
 </div>
-<img alt="_images/d09863f047b151edf3a9d7503f688fc7f64d709e7c8ea3ae60ed883cff10276c.png" src="_images/d09863f047b151edf3a9d7503f688fc7f64d709e7c8ea3ae60ed883cff10276c.png" />
+<img alt="_images/2be78a76f4d69c04990f6103bdc9e52e4db20cc8b905d085daeee9f4212de771.png" src="_images/2be78a76f4d69c04990f6103bdc9e52e4db20cc8b905d085daeee9f4212de771.png" />
 </div>
 </div>
 <p>De acuerdo con el gráfico de distribución podemos notar que la mayoría de las canciones tienen popularidad menos que 60, después decae, por lo cual son muy pocas las canciones que llegan a tener una alta popularidad, y por su descriptivo se confirma una asimetría con cola a la derecha, es decir, muchos atípicos mayores a 50 y son los que más rapido llegan a un “éxito musical”.</p>
@@ -1367,7 +1363,7 @@ Name: popularity, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1f70237fadc328fa19f77e3ea1e6acca50551aefe08aed7ead2ad9e6799623a2.png" src="_images/1f70237fadc328fa19f77e3ea1e6acca50551aefe08aed7ead2ad9e6799623a2.png" />
+<img alt="_images/7bf5e7c70685c12af7638f6bb798a203b6e0bac6a07e1c39ee6f913c142ee4e5.png" src="_images/7bf5e7c70685c12af7638f6bb798a203b6e0bac6a07e1c39ee6f913c142ee4e5.png" />
 </div>
 </div>
 <p>Viendo este patrón junto con los datos musicales se caracteriza que:</p>
@@ -1405,21 +1401,20 @@ Name: popularity, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            Variable       VIF
-4             energy  4.268640
-6           loudness  3.286287
-9       acousticness  2.421847
-12           valence  1.588647
-3       danceability  1.542280
-10  instrumentalness  1.482233
-11          liveness  1.145427
-8        speechiness  1.143808
-13             tempo  1.091738
-14    time_signature  1.081034
-2        duration_ms  1.055172
-7               mode  1.041858
-0         Unnamed: 0  1.027134
-1         popularity  1.024455
-5                key  1.021436
+3             energy  4.249848
+5           loudness  3.269293
+8       acousticness  2.407126
+11           valence  1.586171
+2       danceability  1.540188
+9   instrumentalness  1.474825
+10          liveness  1.142463
+7        speechiness  1.132767
+12             tempo  1.091453
+13    time_signature  1.080963
+1        duration_ms  1.055228
+6               mode  1.042076
+0         popularity  1.023728
+4                key  1.021432
 </pre></div>
 </div>
 </div>
@@ -1438,7 +1433,7 @@ Name: popularity, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b3e6e7d9ac02e673bd28b296a1202a8605f3c6a68c0900f5760bd18273255e46.png" src="_images/b3e6e7d9ac02e673bd28b296a1202a8605f3c6a68c0900f5760bd18273255e46.png" />
+<img alt="_images/7732b64521fd30effae85da34426aa9e60fc5451d3704d275809b32ac46f4fc0.png" src="_images/7732b64521fd30effae85da34426aa9e60fc5451d3704d275809b32ac46f4fc0.png" />
 </div>
 </div>
 <p>Visto en el gráfico, podemos ver una mayor correlación con nuestra variabloe predictora con las siguientes variables Estas características están asociadas a mayor popularidad en canciones:</p>
@@ -1504,7 +1499,7 @@ Name: popularity, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c1557abe0211e294a01f408ff95a63e44ab7786a7b36022c3ee8b9847bc551b6.png" src="_images/c1557abe0211e294a01f408ff95a63e44ab7786a7b36022c3ee8b9847bc551b6.png" />
+<img alt="_images/a78598a50c6fcf6fe5ececf1b5e3d8890ad9d2f9704fd6a46253d1e1564b4c6f.png" src="_images/a78598a50c6fcf6fe5ececf1b5e3d8890ad9d2f9704fd6a46253d1e1564b4c6f.png" />
 </div>
 </div>
 <p>Podemos observar que géneros como acoustic, disco, emo, electronic, funk y metalcore tienen una mediana alta casi lleganodo a 50. También géneros como mandopop, metalcore, garage tienen una distribución muy amplia, lo que indica que hay canciones muy populares y otras poco populares.</p>
