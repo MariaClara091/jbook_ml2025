@@ -797,7 +797,7 @@ memory usage: 17.5+ MB
 </table>
 </div></div></div>
 </div>
-<p>El dataset tiene 114,000 canciones con 21 variables y métricas de popularidad. Como pequeños hhallazgos notables en este descriptivo es que la popularidad tiene un sesgo hacia valores bajos, con una media de 33.24/100 (±22.31) y mediana de 35.
+<p>El dataset tiene 114,000 canciones con 21 variables y métricas de popularidad. Como pequeños hallazgos notables en este descriptivo es que la popularidad tiene un sesgo hacia valores bajos, con una media de 33.24/100 (±22.31) y mediana de 35.
 Con este descriptivo vamos a llevar a cabo los pasos para identificar la características de las canciones exitosas dependiendo de la variable Popularidad y con estos resultados dar las recomendaciones específicas.</p>
 <p>Al encontrar una alerta de posibles nulos y duplicados, hacemos un tratamiento más detallado de ellos.</p>
 <div class="cell docutils container">
@@ -969,9 +969,9 @@ dtype: int64
 <img alt="_images/e872889b1476bea34b107ac19c30122c7186623317923207a34388cb4cf3fb91.png" src="_images/e872889b1476bea34b107ac19c30122c7186623317923207a34388cb4cf3fb91.png" />
 </div>
 </div>
-<p>Haciendo un analisis de cada una de las variables viendo los boxplots de Outliers es, primero, duration_ms (en milisegundos) es que hay canciones que duran más que 5,000,000 ms, siendo aproximadamente unos 83 minutos, algo excepcional. Por lo que pueden haber posibles errores de datos o canciones conceptuales.</p>
+<p>Haciendo un analisis de cada una de las variables viendo los boxplots de Outliers es, primero, duración (en milisegundos) es que hay canciones que duran más que 5,000,000 ms, siendo aproximadamente unos 83 minutos, algo excepcional. Por lo que pueden haber posibles errores de datos o canciones conceptuales.</p>
 <p>En la instrumentalidad las canciones con más popularidad no son 100% instrumentales porque la mayoría, siendo el 75%, está por debajo de aproximadamente 0.049.</p>
-<p>En el compás (time_signature), casi el 100% está en 4/4, lo que significa que todas las canciones de la mayoriía de géneros comparten un mismo compás pues influye en que todas empiencen igual. Se haría un estudio de la historia de esta variable desde tiempos antiguos pues no tiene un cambio en las canciones sin importar su género.</p>
+<p>En el compás (time_signature), casi el 100% está en 4/4, lo que significa que todas las canciones de la mayoría de géneros comparten un mismo compás pues influye en que todas empiencen igual. Se haría un estudio de la historia de esta variable desde tiempos antiguos pues no tiene un cambio en las canciones sin importar su género.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Normalidad Kolmogrov</span>
@@ -1207,14 +1207,14 @@ singer-songwriter       energy 0.055084     Normal
 <img alt="_images/b689c4658089312cdf07c778b95393c2d2a5b70fecb57263425f999bd386f143.png" src="_images/b689c4658089312cdf07c778b95393c2d2a5b70fecb57263425f999bd386f143.png" />
 </div>
 </div>
-<p>Por lo visto en las gráficas podemos visualizar que para la Popularidad Popularity solo unn pequeña subida, es decir, pocas canciones alcanzan alta popularidad.</p>
+<p>Por lo visto en las gráficas podemos visualizar que para la Popularidad Popularity solo un pequeña subida, es decir, pocas canciones alcanzan alta popularidad.</p>
 <p>En cuanto a la Duración de las canciones la mayoría dura entre 2-4 minutos.</p>
 <p>Para la variable Key no se ve una preferencia por alguna tonalidad en general.</p>
 <p>En Loudness podemos inferir que las canciones más escuchadas y que alcanzan un pico alto están entre -6 a -4 dB</p>
 <p>Las canciones más bailables tienen un ritmo por encima de (aprox.) 0.45 y y son más comunes la que tienen una alta energía (mayor a 0.7), como las playlist de ejercicio para los centros educativos o GYMs.</p>
-<p>En cuanto a la acustica se ve un pico en 0 y entre 0.8 a 1, lo cual significa que el sonido debe ser puro. Y en las Instrumentales no hay un pico significativo desde los 0.5, por lo cual son pocas canciones que lo tienen.</p>
+<p>En cuanto a la acústica se ve un pico en 0 y entre 0.8 a 1, lo cual significa que el sonido debe ser puro. Y en las Instrumentales no hay un pico significativo desde los 0.5, por lo cual son pocas canciones que lo tienen.</p>
 <p>En la variable Tempo la mayoría de las canciones tienen un número de pulsaciones o latidos entre los 100BPM A 140 BPM. Y en Time Signature las cancioness más escuchadas tienen un compás de 4/4.</p>
-<p>Como nuestra variable predictora es la Popularidad de las canciones, atribuimos a fondo su invetigación y repercusión en el estudio de nuestro Analisis Exploratorio. Por ello vemos de cerca su distribución.</p>
+<p>Como nuestra variable predictora es la Popularidad de las canciones, atribuimos a fondo su investigación y repercusión en el estudio de nuestro Analisis Exploratorio. Por ello vemos de cerca su distribución.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Análisis de la distribución de Popularidad</span>
@@ -1335,11 +1335,11 @@ Name: popularity, dtype: float64
 <img alt="_images/630f4fb80595d372ebebf72ee686f62c51a6805547c895dee40cb0c7e09dd0e6.png" src="_images/630f4fb80595d372ebebf72ee686f62c51a6805547c895dee40cb0c7e09dd0e6.png" />
 </div>
 </div>
-<p>Aquí podemos ver las correlacione más significativas entre variables como la Energía y Volumen pues muchas canciones energéticas tienden a tener un alto volumen.</p>
-<p>Tambien entre la Acustica y la Energía con Volumen pues al ser más “movidas” contienen una acustica más alta.</p>
-<p>Mientras que en estado medio la popularidad, siendo nuestra variable predictora, tiene correlaciones medias con las anteriormente mencionadas pues las anciones populares tienden a ser más altas en volumen pero algunas con acústicas son menos populares.</p>
+<p>Aquí podemos ver las correlaciones más significativas entre variables como la Energía y Volumen pues muchas canciones energéticas tienden a tener un alto volumen.</p>
+<p>Tambien entre la Acustica y la Energía con Volumen pues al ser más “movidas” contienen una acústica más alta.</p>
+<p>Mientras que en estado medio la popularidad, siendo nuestra variable predictora, tiene correlaciones medias con las anteriormente mencionadas pues las canciones populares tienden a ser más altas en volumen pero algunas con acústicas son menos populares.</p>
 <p>Y las correlaciones más bajas, siendo entre variables como Key, Time_signature y Tempo no influye en la popularidad.</p>
-<p>Al evaluar estso comportamientos, hicimos un análisis PCA para ver más detalladamente la variabilidad de estas variables:</p>
+<p>Al evaluar estos comportamientos, hicimos un análisis PCA para ver más detalladamente la variabilidad de estas variables:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Análisis PCA</span>
@@ -1436,7 +1436,7 @@ Name: popularity, dtype: float64
 <img alt="_images/7732b64521fd30effae85da34426aa9e60fc5451d3704d275809b32ac46f4fc0.png" src="_images/7732b64521fd30effae85da34426aa9e60fc5451d3704d275809b32ac46f4fc0.png" />
 </div>
 </div>
-<p>Visto en el gráfico, podemos ver una mayor correlación con nuestra variabloe predictora con las siguientes variables Estas características están asociadas a mayor popularidad en canciones:</p>
+<p>Visto en el gráfico, podemos ver una mayor correlación con nuestra variable predictora con las siguientes variables Estas características están asociadas a mayor popularidad en canciones:</p>
 <ul class="simple">
 <li><p>Volumen</p></li>
 <li><p>Bailabilidad</p></li>
@@ -1444,7 +1444,7 @@ Name: popularity, dtype: float64
 </ul>
 <p>Es decir, canciones que contengas un mayor volumen y que contengan ritmos bailables producen una mayor energía y, asimismo, una mayor popularidad para el público en general.</p>
 <p>Para las variables tempo, vivacidad y duración influyen poco en que las canciones tengan una popularidad alta, pero son vitales para que se mantengan en los tops.</p>
-<p>Y por último, en variables como la acustica y la instrumentalidad no influyen significativamente en la popularidad de una canción, por lo cual no es recomendable que se hagan mayormente canciones puramente instrumentales pues son poco atractivas.</p>
+<p>Y por último, en variables como la acústica y la instrumentalidad no influyen significativamente en la popularidad de una canción, por lo cual no es recomendable que se hagan mayormente canciones puramente instrumentales pues son poco atractivas.</p>
 <p>Teniendo estas características presente, decidimos indagar más en la influencia de los artistas a estas cifras:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1481,7 +1481,7 @@ Name: popularity, dtype: float64
 </ul>
 <p>Y artistas nuevos como BTS llegan al top dando una revolución e impacto global en la música.</p>
 <p>Y hallazgos en el top de artistas por popularidad tenemos a Bad Bunny, The Weeknd, Beyoncé, Harry Styles, por lo cual música actual tiene una mezcla de estos géneros: reggaetón, pop y electrónica.</p>
-<p>También as colaboraciones entre artistas aumentan la posibilidad de llegar a tener mayor popularidad, como los dúos (ejemplo: Rema &amp; Selena Gomez).</p>
+<p>También las colaboraciones entre artistas aumentan la posibilidad de llegar a tener mayor popularidad, como los dúos (ejemplo: Rema &amp; Selena Gomez).</p>
 <p>Y como características de estos artistas es que tienen más sencillos que albumen largos, por lo que las disqueras pueden aumentar su popularidad cambiando esta estrategia comercial a una disco más sencillo.</p>
 <p>Discográficas podrían priorizar lanzamientos de sencillos en lugar de álbumes largos.</p>
 <p>Cabe destacar que la cantidad de canciones no influye en su popularidad pues hay artistas como Bad Bunny que tiene menos canciones que The Beatles, pero tiene una mayor popularidad.</p>
@@ -1535,8 +1535,8 @@ Name: popularity, dtype: float64
 </div>
 </div>
 <p>Algunas repercuciones en el cotenido explicito de algunas canciones y su popularidad sí están relacionadas pues las canciones explícitas tienden a ser más populares, como podemos ver en géneros como emo, metalcore, reggaeton r-n-b pues tienen una mediana más alta que las no explícitas, contrario al caso de los géneros mpb y pagode, que no muestran ningún hallazgo de temas explícitos y los no explícitos.</p>
-<p>Mientra que oara géneros como acoustic, disco, garage y rock-n-roll no on muy populares por sus temas explícitos.</p>
-<p>Y géneros como funk, mandopop, punk-rock y country no tienen una diferencias marcada entre sus canciones explícitas y las no explícitas.</p>
+<p>Mientras que para géneros como acoustic, disco, garage y rock-n-roll no son muy populares por sus temas explícitos.</p>
+<p>Y géneros como funk, mandopop, punk-rock y country no tienen diferencias marcadas entre sus canciones explícitas y las no explícitas.</p>
 <p>Por tanto, la presencia de contenido explícito no garantiza una mayor o menor popularidad pues se sigue viendo que la variabilidad en el género afecta mucho que resurgan este tipo de vocabulario. También hay géneros donde la diferencia es mínima o donde ambos tipos coexisten con niveles similares de éxito.</p>
 <p>En cuanto a la relación entre la bailabilidad y energía muchas canciones tienden a ser tanto bailables como energéticas pues existe una correlación entre alta energía y bailabilidad con alta popularidad (zona superior derecha).</p>
 <p>Por lo cual, las canciones que son tanto bailables como energéticas tienden a destacarse más entre las populares, y aún así existen canciones con baja energía o bailabilidad que también logran buena popularidad en el centro de la gráfica, por lo que no son factores exclusivos pero si influyen significativamente en que tengan una mayor popularidad.</p>
