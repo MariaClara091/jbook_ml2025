@@ -1309,7 +1309,7 @@ Name: popularity, dtype: float64
 <li><p>Dance-pop</p></li>
 </ul>
 <p>Por lo cual para las disqueras se les recomienda invertir más en estos géneros</p>
-<p>Mientras que en el Tp de los 10 géneros con menor popularidad como el Grimbton, Kids, Classical e Iranian tiene un bajo rendimiento en Spotify, por lo cual se les recomienda usar otras app que los impulsen.</p>
+<p>Mientras que en el Top de los 10 géneros con menor popularidad como el Grimbton, Kids, Classical e Iranian tiene un bajo rendimiento en Spotify, por lo cual se les recomienda usar otras app que los impulsen.</p>
 <p>Y en la Distribución de popularidad por género el K-pop muestra alta popularidad y algunos temas en géneros menos populares como señanajo logran alta popularidad.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1842,11 +1842,10 @@ Ejemplo de umbral con recall ≥ 0.8: {&#39;threshold&#39;: 0.43, &#39;accuracy&
 <p>Algunas métricas recomendadas serían Precision, Recall y F1 para la clase “popular” y AUC-ROC / AUC-PR pues el desbalance, el accuracy puede ser engañoso. F1 resume tradeoff entre Precision y Recall; AUC/PR son robustas al balance.</p>
 <p>Por tanto, si Spotify quiere maximizar descubrimiento de posibles hits se debe priorizar Recall, es decir, capturar la mayor cantidad de canciones con potencial, usar un umbral más bajo y luego filtrar con un proceso humano/QA.</p>
 <p>Si Spotify no quisiera gastar presupuesto en música que no pegue o sea la más popular en listas, priorizar Precision cuando quiera promocionar, es decir, que tenga alta probabilidad de éxito.</p>
-<p>Si quieres equilibrio para un sistema automático de recomendaciones puede usar F1 score y revisar AUC-PR para rendimiento con desbalance.</p>
-<p>Por otro lado, los coeficientes dan una idea direccional: coef positivo → aumenta probabilidad de ser popular; coef negativo → reduce.</p>
+<p>Por otro lado, los coeficientes dan una idea direccional: coef positivo → aumenta probabilidad de ser popular mientras que coef negativo → reduce.</p>
 <p>Los odds ratios (exp(coef)) muestran el factor multiplicativo en las odds por unidad de incremento de la feature escalada. Un aspecto importante de los features continuas y escaladas que que son capaces de interpreta por desviación estándar o unidades entendibles, lo cual ayuda a  identificar canciones con alta probabilidad de volverse populares, siendo un destino prioritario para campañas, playlist o promoción.</p>
 <p>Tambien los A&amp;R Insights ayudan a detectar qué características (como tempo, danceability, género) se asocian a éxitos en diferentes mercados y guía a equipos de descubrimiento/contratación. Además, mejorar las reglas de curación algorítmica para playlists.</p>
-<p>Una característica fundamental que va directamente ligada a los usuarios, y que ppuede incremetar no solo la popukaridad del artista, sino también de la app, es la segmentación de usuarios porque combina predisposición de track con perfiles de usuarios para darles recomendaciones más efectivas y que les guste. Ahora, si la predicción de popularidad ayuda a reducir el gasto en promoción en tracks sin potencial, mejora RO, por lo que usar el modelo para proponer experimentos (como colocar X canciones en una playlist de test) y medir lift de streams, así ayuda a entender y corregir sesgos algorítmicos.</p>
+<p>Una característica fundamental que va directamente ligada a los usuarios, y que puede incremetar no solo la popularidad del artista, sino también de la app, es la segmentación de usuarios porque combina predisposición de track con perfiles de usuarios para darles recomendaciones más efectivas y que les guste. Ahora, si la predicción de popularidad ayuda a reducir el gasto en promoción en tracks sin potencial, mejora RO, por lo que usar el modelo para proponer experimentos (como colocar X canciones en una playlist) y medir lift de streams, así ayuda a entender y corregir sesgos algorítmicos.</p>
 <p>Pero para cumplir a cabalidad con esta idea faltarían comportamientos externos por analizar, como fecha de lanzamiento, de marketing como las campañas publicitarias y propagandas, metadatos geográficos o demográficos de audiencia.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
