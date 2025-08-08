@@ -865,7 +865,7 @@ Name: count, dtype: int64
 </div>
 </div>
 </div>
-<p>Encontramos en la base 3 nulos que debemos tratar para así observar mejor los datos.</p>
+<p>Encontramos en la base 3 nulos que debemos tratar para así observar mejor los datos:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;artists&#39;</span><span class="p">,</span> <span class="s1">&#39;album_name&#39;</span><span class="p">,</span> <span class="s1">&#39;track_name&#39;</span><span class="p">]:</span>
@@ -942,7 +942,7 @@ dtype: int64
 </div>
 </div>
 </div>
-<p>Ahora un analisis de Outliers:</p>
+<p>Analizamos Datos Atípicos:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Librerias necesarias</span>
@@ -969,9 +969,9 @@ dtype: int64
 <img alt="_images/3f663d65e8e2ebf3902896b057608e4f24602c95035a66b8e8edb9b1b6a08400.png" src="_images/3f663d65e8e2ebf3902896b057608e4f24602c95035a66b8e8edb9b1b6a08400.png" />
 </div>
 </div>
-<p>Haciendo un analisis de cada una de las variables viendo los boxplots de Outliers es, primero, duración (en milisegundos) es que hay canciones que duran más que 5,000,000 ms, siendo aproximadamente unos 83 minutos, algo excepcional. Por lo que pueden haber posibles errores de datos o canciones conceptuales.</p>
-<p>En la instrumentalidad las canciones con más popularidad no son 100% instrumentales porque la mayoría, siendo el 75%, está por debajo de aproximadamente 0.049.</p>
-<p>En el compás (time_signature), casi el 100% está en 4/4, lo que significa que todas las canciones de la mayoría de géneros comparten un mismo compás pues influye en que todas empiencen igual. Se haría un estudio de la historia de esta variable desde tiempos antiguos pues no tiene un cambio en las canciones sin importar su género.</p>
+<p>Haciendo un analisis de cada una de las variables con base a los boxplots de Outliers es, primero, duración (en milisegundos) es que hay canciones que duran más que 5,000,000 ms, siendo aproximadamente unos 83 minutos, algo excepcional.</p>
+<p>Segundo, la instrumentalidad las canciones con más popularidad no son 100% instrumentales porque la mayoría, siendo el 75%, está por debajo de aproximadamente 0.049.</p>
+<p>Y tercero, el compás (time_signature), casi el 100% está en 4/4, lo que significa que todas las canciones de la mayoría de géneros comparten un mismo compás pues influye en que todas empiencen igual. Se haría un estudio de la historia de esta variable desde tiempos antiguos pues no tiene un cambio en las canciones sin importar su género.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Normalidad Kolmogrov</span>
@@ -1067,7 +1067,7 @@ Variables NO normales (p &lt; 0.05): [&#39;popularity&#39;, &#39;duration_ms&#39
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Analizando géneros: 100%|██████████| 114/114 [00:02&lt;00:00, 45.99it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Analizando géneros: 100%|██████████| 114/114 [00:02&lt;00:00, 46.55it/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=== Resultados de Normalidad por Género y Variable ===
@@ -1177,6 +1177,9 @@ singer-songwriter       energy 0.055084     Normal
           turkish       energy 0.399394     Normal
 </pre></div>
 </div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </div>
 </div>
 <p>Los resultados arrojados nos muestran que hay normalidad en casi todos los géneros.</p>
@@ -1204,14 +1207,14 @@ singer-songwriter       energy 0.055084     Normal
 <img alt="_images/5b2e30b3bd409311e85e463fe632a01274715f2df8e692a5093e2a14e277ed40.png" src="_images/5b2e30b3bd409311e85e463fe632a01274715f2df8e692a5093e2a14e277ed40.png" />
 </div>
 </div>
-<p>Por lo visto en las gráficas podemos visualizar que para la Popularidad Popularity solo un pequeña subida, es decir, pocas canciones alcanzan alta popularidad.</p>
-<p>En cuanto a la Duración de las canciones la mayoría dura entre 2-4 minutos.</p>
+<p>Por lo visto en las gráficas podemos visualizar que para la popularidad solo un pequeña subida, es decir, pocas canciones alcanzan alta popularidad.</p>
+<p>En cuanto a la duración de las canciones la mayoría dura entre 2-4 minutos.</p>
 <p>Para la variable Key no se ve una preferencia por alguna tonalidad en general.</p>
-<p>En Loudness podemos inferir que las canciones más escuchadas y que alcanzan un pico alto están entre -6 a -4 dB.</p>
-<p>Las canciones más bailables tienen un ritmo por encima de (aprox.) 0.45 y y son más comunes la que tienen una alta energía (mayor a 0.7), como las playlist de ejercicio para los centros educativos o GYMs.</p>
-<p>En cuanto a la acústica se ve un pico en 0 y entre 0.8 a 1, lo cual significa que el sonido debe ser puro. Y en las Instrumentales no hay un pico significativo desde los 0.5, por lo cual son pocas canciones que lo tienen.</p>
-<p>En la variable Tempo la mayoría de las canciones tienen un número de pulsaciones o latidos entre los 100BPM A 140 BPM. Y en Time Signature las cancioness más escuchadas tienen un compás de 4/4.</p>
-<p>Como nuestra variable predictora es la Popularidad de las canciones, atribuimos a fondo su investigación y repercusión en el estudio de nuestro Analisis Exploratorio. Por ello vemos de cerca su distribución.</p>
+<p>En volumen podemos inferir que las canciones más escuchadas y que alcanzan un pico alto están entre -6 a -4 dB.</p>
+<p>Las canciones más bailables tienen un ritmo por encima de (aprox.) 0.45 y y son más comunes la que tienen una alta energía, un tanto mayor a 0.7, como las playlist de ejercicio para los centros educativos o GYMs.</p>
+<p>En cuanto a la acústica se ve un pico en 0 y entre 0.8 a 1, lo cual significa que el sonido debe ser puro. Y en las instrumentales no hay un pico significativo desde los 0.5, por lo cual son pocas canciones que lo tienen.</p>
+<p>En la variable Tempo la mayoría de las canciones tienen un número de pulsaciones o latidos entre los 100 BPM A 140 BPM.</p>
+<p>Como nuestra variable predictora es la popularidad de las canciones, atribuimos a fondo su investigación y repercusión en el estudio de nuestro Analisis Exploratorio. Por ello vemos de cerca su distribución:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Análisis de la distribución de Popularidad</span>
@@ -1251,7 +1254,7 @@ Name: popularity, dtype: float64
 <img alt="_images/d09863f047b151edf3a9d7503f688fc7f64d709e7c8ea3ae60ed883cff10276c.png" src="_images/d09863f047b151edf3a9d7503f688fc7f64d709e7c8ea3ae60ed883cff10276c.png" />
 </div>
 </div>
-<p>De acuerdo con el gráfico de distribución podemos notar que la mayoría de las canciones tienen popularidad menos que 60, después decae, por lo cual son muy pocas las canciones que llegan a tener una alta popularidad, y por su descriptivo se confirma una asimetría con cola a la derecha, es decir, muchos atípicos mayores a 50 y son los que más rapido llegan a un “éxito musical”.</p>
+<p>De acuerdo con el gráfico de distribución podemos notar que la mayoría de las canciones tienen popularidad menos que 60, después decae, por lo cual son muy pocas las canciones que llegan a tener una alta popularidad, y por su descriptivo se confirma una asimetría con cola a la derecha, es decir, muchos atípicos mayores a 50 y son los que más rapido llegan a tener una gran popularidad.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
@@ -1306,8 +1309,8 @@ Name: popularity, dtype: float64
 <li><p>Dance-pop</p></li>
 </ul>
 <p>Por lo cual para las disqueras se les recomienda invertir más en estos géneros.</p>
-<p>Mientras que en el Top de los 10 géneros con menor popularidad como el Grimbton, Kids, Classical e Iranian tiene un bajo rendimiento en Spotify, por lo cual se les recomienda usar otras app que los impulsen.</p>
-<p>Y en la Distribución de popularidad por género el K-pop muestra alta popularidad y algunos temas en géneros menos populares como señanajo logran alta popularidad.</p>
+<p>Mientras que en el top de los 10 géneros con menor popularidad como el Grimbton, Kids, Classical e Iranian tiene un bajo rendimiento en Spotify, por lo cual se les recomienda usar otras app o páginas que los impulsen.</p>
+<p>Y en la distribución de popularidad por género el K-pop mtiene alta popularidad y algunos temas de géneros menos populares como señanajo logran alta popularidad.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calcular la matriz de correlación</span>
@@ -1337,10 +1340,10 @@ Name: popularity, dtype: float64
 <img alt="_images/630f4fb80595d372ebebf72ee686f62c51a6805547c895dee40cb0c7e09dd0e6.png" src="_images/630f4fb80595d372ebebf72ee686f62c51a6805547c895dee40cb0c7e09dd0e6.png" />
 </div>
 </div>
-<p>Aquí podemos ver las correlaciones más significativas entre variables como la Energía y Volumen pues muchas canciones energéticas tienden a tener un alto volumen.</p>
-<p>Tambien entre la Acustica y la Energía con Volumen pues al ser más “movidas” contienen una acústica más alta.</p>
-<p>Mientras que en estado medio la popularidad, siendo nuestra variable predictora, tiene correlaciones medias con las anteriormente mencionadas pues las canciones populares tienden a ser más altas en volumen pero algunas con acústicas son menos populares.</p>
-<p>Y las correlaciones más bajas, siendo entre variables como Key, Time_signature y Tempo no influye en la popularidad.</p>
+<p>Aquí podemos ver las correlaciones más significativas entre variables como la energía y volumen pues muchas canciones energéticas tienden a tener un alto volumen.</p>
+<p>Tambien entre la acástica y la energía con Volumen pues al ser más “movidas” contienen una acústica más alta.</p>
+<p>Mientras la popularidad, siendo nuestra variable predictora, tiene correlaciones medias con las anteriormente mencionadas pues las canciones populares tienden a ser más altas en volumen pero algunas con acústicas son menos populares.</p>
+<p>Y las correlaciones más bajas, siendo entre variables como Key, time_signature y tempo no influye en la popularidad de las canciones.</p>
 <p>Al evaluar estos comportamientos, hicimos un análisis PCA para ver más detalladamente la variabilidad de estas variables:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1368,13 +1371,7 @@ Name: popularity, dtype: float64
 <img alt="_images/7bf5e7c70685c12af7638f6bb798a203b6e0bac6a07e1c39ee6f913c142ee4e5.png" src="_images/7bf5e7c70685c12af7638f6bb798a203b6e0bac6a07e1c39ee6f913c142ee4e5.png" />
 </div>
 </div>
-<p>Viendo este patrón junto con los datos musicales se caracteriza que:</p>
-<ul class="simple">
-<li><p>PC1: correlacionado con Energy y Volumen.</p></li>
-<li><p>PC2: Podría representar estilo acústico vs. electrónico.</p></li>
-<li><p>PC3: Relación entre bailabilidad y positividad (valence).</p></li>
-</ul>
-<p>Por lo cual, muchas características musicales como la energía, bailabilidad, etc., están correlacionadas, lo cual se ajusta a lo que visualizamos en el gráfico de correlaciones.</p>
+<p>Viendo este patrón junto con los datos musicales volvimos a ver la correlación entre la energía y el volumen, correlacionado y relación entre bailabilidad y positividad (valence).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Analisis VIF </span>
@@ -1422,7 +1419,7 @@ Name: popularity, dtype: float64
 </div>
 </div>
 <p>Podemos notar que todas las variables tienen un valor VIF entre 1 a 5, lo que indica que no hay problemas graves de multicolinealidad.</p>
-<p>Con esto en mente, hicimos una analisis de correlación más a fondo de nuestra variable predictora (Popularidad):</p>
+<p>Luego, hicimos una analisis de correlación más a fondo de nuestra variable predictora:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Correlaciones con popularidad</span>
@@ -1438,7 +1435,7 @@ Name: popularity, dtype: float64
 <img alt="_images/7732b64521fd30effae85da34426aa9e60fc5451d3704d275809b32ac46f4fc0.png" src="_images/7732b64521fd30effae85da34426aa9e60fc5451d3704d275809b32ac46f4fc0.png" />
 </div>
 </div>
-<p>Visto en el gráfico, podemos ver una mayor correlación con nuestra variable predictora con las siguientes variables Estas características están asociadas a mayor popularidad en canciones:</p>
+<p>Visto en el gráfico, volvemos a ver más de cerca una mayor correlación con nuestra variable predictora con:</p>
 <ul class="simple">
 <li><p>Volumen</p></li>
 <li><p>Bailabilidad</p></li>
@@ -1447,7 +1444,7 @@ Name: popularity, dtype: float64
 <p>Es decir, canciones que contengas un mayor volumen y que contengan ritmos bailables producen una mayor energía y, asimismo, una mayor popularidad para el público en general.</p>
 <p>Para las variables tempo, vivacidad y duración influyen poco en que las canciones tengan una popularidad alta, pero son vitales para que se mantengan en los tops.</p>
 <p>Y por último, en variables como la acústica y la instrumentalidad no influyen significativamente en la popularidad de una canción, por lo cual no es recomendable que se hagan mayormente canciones puramente instrumentales pues son poco atractivas.</p>
-<p>Teniendo estas características presente, decidimos indagar más en la influencia de los artistas a estas cifras:</p>
+<p>Dejando de lado la popularidad, indagamos más en la influencia de los artistas:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Análisis de artistas</span>
@@ -1458,8 +1455,6 @@ Name: popularity, dtype: float64
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Número de canciones&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Artista&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-<span class="c1"># Top 20 artistas por popularidad (mediana)</span>
 <span class="n">artist_popularity</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;artists&#39;</span><span class="p">)[</span><span class="s1">&#39;popularity&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
@@ -1484,11 +1479,10 @@ Name: popularity, dtype: float64
 <li><p>Stevie Wonder</p></li>
 </ul>
 <p>Y artistas nuevos como BTS llegan al top dando una revolución e impacto global en la música.</p>
-<p>Y hallazgos en el top de artistas por popularidad tenemos a Bad Bunny, The Weeknd, Beyoncé, Harry Styles, por lo cual música actual tiene una mezcla de estos géneros: reggaetón, pop y electrónica.</p>
-<p>También las colaboraciones entre artistas aumentan la posibilidad de llegar a tener mayor popularidad, como los dúos (ejemplo: Rema &amp; Selena Gomez).</p>
-<p>Y como características de estos artistas es que tienen más sencillos que albumen largos, por lo que las disqueras pueden aumentar su popularidad cambiando esta estrategia comercial a una disco más sencillo.</p>
-<p>Discográficas podrían priorizar lanzamientos de sencillos en lugar de álbumes largos.</p>
-<p>Cabe destacar que la cantidad de canciones no influye en su popularidad pues hay artistas como Bad Bunny que tiene menos canciones que The Beatles, pero tiene una mayor popularidad.</p>
+<p>Pero algo interesante es que la cantidad de canciones no influye en su popularidad pues hay artistas como Bad Bunny que tiene menos canciones que The Beatles, pero tiene una mayor popularidad.</p>
+<p>En el top de artistas por popularidad tenemos a Bad Bunny, The Weeknd, Beyoncé, Harry Styles, por lo cual música actual tiene una mezcla de estos géneros: reggaetón, pop y electrónica.</p>
+<p>También las colaboraciones entre artistas aumentan la posibilidad de llegar a tener mayor popularidad, como los dúos.</p>
+<p>Y como características de estos artistas es que tienen más sencillos que albumen largos, por lo que las disqueras pueden aumentar su popularidad cambiando esta estrategia comercial a una disco más corto. Por lo que las disqueras podrían priorizar lanzamientos de sencillos en lugar de álbumes largos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Boxplot por género</span>
@@ -1506,11 +1500,11 @@ Name: popularity, dtype: float64
 <img alt="_images/a78598a50c6fcf6fe5ececf1b5e3d8890ad9d2f9704fd6a46253d1e1564b4c6f.png" src="_images/a78598a50c6fcf6fe5ececf1b5e3d8890ad9d2f9704fd6a46253d1e1564b4c6f.png" />
 </div>
 </div>
-<p>Podemos observar que géneros como acoustic, disco, emo, electronic, funk y metalcore tienen una mediana alta casi lleganodo a 50. También géneros como mandopop, metalcore, garage tienen una distribución muy amplia, lo que indica que hay canciones muy populares y otras poco populares.</p>
+<p>Podemos observar que géneros como acoustic, disco, emo, electronic, funk y metalcore tienen una mediana alta casi llegando a 50. También géneros como mandopop, metalcore, garage tienen una distribución muy amplia, lo que indica que hay canciones muy populares y otras poco populares.</p>
 <p>Mientras que el reggaeton tieen alta variabilidad y outliers hacia arriba, por lo cual hay excepciones, es decir, canciones que alcanzan más popularidad que el promedio.</p>
-<p>Y por géneros como mpb, pagode, punk-rock, r&amp;b, electronic y funk tienen cajas muy estrechas, lo que sugiere tienen una popularidad constante, sin muchos cambios a lo largo de ellas.</p>
-<p>Por lo tanto, un género único no existe, sino que hay una variabilidad alta y extensa que hacer más competencia en llegar a tener cancione que sean populares. Pero para los géneros como disco, acoustic y emo tienden una popularidad altas y constante, llegando así a tener más canciones con éxito en listas.</p>
-<p>Luego abarcamos los contenidos explícitos de algunos albumen y sencillos de estos artistas y en qué repercuta estos con la popularidad en las listas. Además, evaluamos la bailabilidad y la energía de estas canciones y que pueden influir en alcanzar una mayor popularidad:</p>
+<p>Y por géneros como mpb, pagode, punk-rock, r&amp;b, electronic y funk tienen cajas muy estrechas, es decir, una popularidad sin muchos cambios a lo largo de estas canciones.</p>
+<p>Por lo tanto, un género único o primordial no existe porque hay una variabilidad alta y extensa que una competencia en cómo llegar a tener canciones populares..</p>
+<p>Luego abarcamos los contenidos explícitos de algunos albumes de estos artistas y en cómo afecta su la popularidad en las listas. Además, evaluamos la bailabilidad y la energía de estas canciones y que pueden influir en alcanzar una mayor popularidad:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Popularidad por género y explicit content</span>
@@ -1541,13 +1535,13 @@ Name: popularity, dtype: float64
 <p>Algunas repercuciones en el cotenido explicito de algunas canciones y su popularidad sí están relacionadas pues las canciones explícitas tienden a ser más populares, como podemos ver en géneros como emo, metalcore, reggaeton r-n-b pues tienen una mediana más alta que las no explícitas, contrario al caso de los géneros mpb y pagode, que no muestran ningún hallazgo de temas explícitos y los no explícitos.</p>
 <p>Mientras que para géneros como acoustic, disco, garage y rock-n-roll no son muy populares por sus temas explícitos.</p>
 <p>Y géneros como funk, mandopop, punk-rock y country no tienen diferencias marcadas entre sus canciones explícitas y las no explícitas.</p>
-<p>Por tanto, la presencia de contenido explícito no garantiza una mayor o menor popularidad pues se sigue viendo que la variabilidad en el género afecta mucho que resurgan este tipo de vocabulario. También hay géneros donde la diferencia es mínima o donde ambos tipos coexisten con niveles similares de éxito.</p>
-<p>En cuanto a la relación entre la bailabilidad y energía muchas canciones tienden a ser tanto bailables como energéticas pues existe una correlación entre alta energía y bailabilidad con alta popularidad (zona superior derecha).</p>
-<p>Por lo cual, las canciones que son tanto bailables como energéticas tienden a destacarse más entre las populares, y aún así existen canciones con baja energía o bailabilidad que también logran buena popularidad en el centro de la gráfica, por lo que no son factores exclusivos pero si influyen significativamente en que tengan una mayor popularidad.</p>
+<p>Por tanto, la presencia de contenido explícito puede generar un aumento en la popularidad de la canción pero se sigue viendo una variabilidad en los géneros afecta mucho que resurgan este tipo de vocabulario.</p>
+<p>En cuanto a la relación entre la bailabilidad y la energía muchas canciones tienden a ser tanto bailables como energéticas pues, como dijimos antes, hay una correlación entre alta energía y bailabilidad con alta popularidad.</p>
+<p>Pero existen canciones con baja energía o bailabilidad que también logran buena popularidad en el centro de la gráfica, por lo que no son factores exclusivos pero si influyen significativamente en que tengan una mayor popularidad.</p>
+<p>Como último esquema del EDA, vamos a hacer un análisis de Regresión logística</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Logistic regression - análisis completo con métricas y ajuste de umbral</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogisticRegression</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
@@ -1555,10 +1549,10 @@ Name: popularity, dtype: float64
     <span class="n">precision_score</span><span class="p">,</span> <span class="n">recall_score</span><span class="p">,</span> <span class="n">f1_score</span><span class="p">,</span> <span class="n">roc_auc_score</span><span class="p">,</span>
     <span class="n">roc_curve</span><span class="p">,</span> <span class="n">precision_recall_curve</span>
 <span class="p">)</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">joblib</span>  <span class="c1"># para guardar modelo</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">joblib</span>  
 <span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span>
 
-<span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;danceability&#39;</span><span class="p">,</span> <span class="s1">&#39;energy&#39;</span><span class="p">,</span> <span class="s1">&#39;valence&#39;</span><span class="p">,</span> <span class="s1">&#39;tempo&#39;</span><span class="p">,</span> <span class="s1">&#39;acousticness&#39;</span><span class="p">]</span>  <span class="c1"># reemplazá por las que tengas</span>
+<span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;danceability&#39;</span><span class="p">,</span> <span class="s1">&#39;energy&#39;</span><span class="p">,</span> <span class="s1">&#39;valence&#39;</span><span class="p">,</span> <span class="s1">&#39;tempo&#39;</span><span class="p">,</span> <span class="s1">&#39;acousticness&#39;</span><span class="p">]</span>  
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;popular&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;popularity&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">70</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 
 
@@ -1660,7 +1654,6 @@ Name: popularity, dtype: float64
 <span class="n">best_f1_row</span> <span class="o">=</span> <span class="n">metrics_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">metrics_df</span><span class="p">[</span><span class="s1">&#39;f1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()]</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Mejor umbral por F1: </span><span class="si">{</span><span class="n">best_f1_row</span><span class="p">[</span><span class="s1">&#39;threshold&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> con F1=</span><span class="si">{</span><span class="n">best_f1_row</span><span class="p">[</span><span class="s1">&#39;f1&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<span class="c1"># Ejemplo: umbral con recall ≥ 0.8</span>
 <span class="n">rec80</span> <span class="o">=</span> <span class="n">metrics_df</span><span class="p">[</span><span class="n">metrics_df</span><span class="p">[</span><span class="s1">&#39;recall&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">0.8</span><span class="p">]</span>
 <span class="k">if</span> <span class="ow">not</span> <span class="n">rec80</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
     <span class="n">chosen</span> <span class="o">=</span> <span class="n">rec80</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;precision&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -1835,15 +1828,11 @@ Ejemplo de umbral con recall ≥ 0.8: {&#39;threshold&#39;: 0.43, &#39;accuracy&
 </div>
 </div>
 <p>Características de TN, FP, FN, TP.</p>
-<p>Una caraterística que muestran estos resultados es que, por ejemplo, un alto FN significa que el modelo no detecta muchos hits (riesgo: no recomendar/descubrir canciones con potencial).</p>
-<p>Algunas métricas recomendadas serían Precision, Recall y F1 para la clase “popular” y AUC-ROC / AUC-PR pues el desbalance, el accuracy puede ser engañoso. F1 resume tradeoff entre Precision y Recall; AUC/PR son robustas al balance.</p>
-<p>Por tanto, si Spotify quiere maximizar descubrimiento de posibles hits se debe priorizar Recall, es decir, capturar la mayor cantidad de canciones con potencial, usar un umbral más bajo y luego filtrar con un proceso humano/QA.</p>
-<p>Si Spotify no quisiera gastar presupuesto en música que no pegue o sea la más popular en listas, priorizar Precision cuando quiera promocionar, es decir, que tenga alta probabilidad de éxito.</p>
-<p>Por otro lado, los coeficientes dan una idea direccional: coef positivo → aumenta probabilidad de ser popular mientras que coef negativo → reduce.</p>
-<p>Los odds ratios (exp(coef)) muestran el factor multiplicativo en las odds por unidad de incremento de la feature escalada. Un aspecto importante de los features continuas y escaladas que que son capaces de interpreta por desviación estándar o unidades entendibles, lo cual ayuda a  identificar canciones con alta probabilidad de volverse populares, siendo un destino prioritario para campañas, playlist o promoción.</p>
-<p>Tambien los A&amp;R Insights ayudan a detectar qué características (como tempo, danceability, género) se asocian a éxitos en diferentes mercados y guía a equipos de descubrimiento/contratación. Además, mejorar las reglas de curación algorítmica para playlists.</p>
+<p>Una caraterística que muestran estos resultados es que, por ejemplo, un alto FN significa que el modelo no detecta muchos hits o éxitos.</p>
+<p>Por tanto, si Spotify quiere maximizar descubrimiento de posibles hits se debe priorizar Recall, es decir, capturar la mayor cantidad de canciones con potencial. Pero si no quisiera gastar presupuesto en música que no pegue o sea la más popular en listas, priorizar Precision cuando quiera promocionar, es decir, que tenga alta probabilidad de éxito.</p>
+<p>Por otro lado, los coeficientes positivos aumentan la popularidad mientras que los coeficientes negativos la reducen.</p>
 <p>Una característica fundamental que va directamente ligada a los usuarios, y que puede incremetar no solo la popularidad del artista, sino también de la app, es la segmentación de usuarios porque combina predisposición de track con perfiles de usuarios para darles recomendaciones más efectivas y que les guste. Ahora, si la predicción de popularidad ayuda a reducir el gasto en promoción en tracks sin potencial, mejora RO, por lo que usar el modelo para proponer experimentos (como colocar X canciones en una playlist) y medir lift de streams, así ayuda a entender y corregir sesgos algorítmicos.</p>
-<p>Pero para cumplir a cabalidad con esta idea faltarían comportamientos externos por analizar, como fecha de lanzamiento, de marketing como las campañas publicitarias y propagandas, metadatos geográficos o demográficos de audiencia.</p>
+<p>Pero para cumplir con esta idea faltarían comportamientos externos por analizar, como fecha de lanzamiento, de marketing como las campañas publicitarias y propagandas, metadatos geográficos o demográficos de audiencia.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Resumen de hallazgos</span>
@@ -1873,10 +1862,9 @@ Name: popularity, dtype: float64
 </div>
 </div>
 <p>Concluimos que hay mucha diversidad musical hoy en día pues hay 114 géneros bien representados.
-Contiene una distribución balanceada de géneros y una distribución asimétrica de popularidad, lo que sugiere que todos los géneros tienen oportunidad pero pocos alcanzan máxima popularidad.</p>
-<p>Este EDA representa la diversidad musical actual. Captura la dinámica competitiva de la industria ofrenciendo oportunidades para descubrir patrones ocultos en ciertos géneros, poder predecir un éxito musical y optimizar recomendaciones.</p>
-<p>Pero unas limitantes serían que no se considera temporalidad (es decir, evolución histórica). También carece de datos demográficos de oyentes. Contiene métricas de popularidad pueden tener sesgos algorítmicos, lo cual es dificil de analizar.</p>
-<p>Y para predicciones futuras se podría tener en cuenta análisis temporal de tendencias, una segmentación por región geográfica y un modelado de factores de éxito.</p>
+Contiene una distribución balanceada de géneros y una distribución asimétrica de popularidad, lo que sugiere que todos los géneros tienen oportunidad pero pocos alcanzan esa máxima popularidad.</p>
+<p>Este EDA representa la diversidad musical actual. Captura la dinámica competitiva de la industria que ofrece oportunidades para ver patrones en ciertos géneros, poder predecir un éxito musical y optimizar recomendaciones.</p>
+<p>Los hallazgos no solo muestras las preferencias de las personas del mundo, sino que también las herramientas para los artistas, productores y plataformas digitales o streaming necesitas pues la música va a seguir creciendo y con ello tenemos muchos aspectos con los cuales poder seguir investigando las futuras tendencias.</p>
 </section>
 
     <script type="text/x-thebe-config">
