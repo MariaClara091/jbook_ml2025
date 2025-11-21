@@ -393,8 +393,6 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#propuesta-de-modelo-original">Propuesta de Modelo Original</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imboost-improved-boosting-for-imbalanced-data">IMBoost (Improved Boosting for Imbalanced Data)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicacion-en-el-proyecto">Aplicación en el proyecto</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resultado-destacado">Resultado destacado</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-destaca">Por qué destaca</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#referencia-metodologica-basada-en">Referencia metodológica basada en</a></li>
 </ul>
 </li>
@@ -402,6 +400,7 @@ document.write(`
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#implementacion-del-modelo-original-y-comparacion">Implementación del Modelo Original y Comparación</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-resultados-imboost-vs-xgboost-scale-weight">Análisis de Resultados: IMBoost vs XGBoost Scale Weight</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-destaca">Por qué destaca</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-del-proceso-de-optimizacion">Análisis del Proceso de Optimización</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-graficos">Análisis de gráficos</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implicaciones-en-contexto-musical-spotify">Implicaciones en Contexto Musical - Spotify</a></li>
@@ -19109,45 +19108,6 @@ ESTADISTICAS DEL ANALISIS:
 <li><p><code class="docutils literal notranslate"><span class="pre">max_depth</span></code>: 14</p></li>
 </ul>
 </section>
-<section id="resultado-destacado">
-<h3>Resultado destacado<a class="headerlink" href="#resultado-destacado" title="Permalink to this heading">#</a></h3>
-<p><strong>IMBoost optimizado superó significativamente al mejor modelo anterior (XGBoost Scale Weight):</strong></p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Modelo</p></th>
-<th class="head"><p>F1-Macro</p></th>
-<th class="head"><p>Accuracy</p></th>
-<th class="head"><p>AUC</p></th>
-<th class="head"><p>Mejora vs Baseline</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>XGBoost Scale Weight</p></td>
-<td><p>0.7548</p></td>
-<td><p>0.9530</p></td>
-<td><p>0.9062</p></td>
-<td><p>-</p></td>
-</tr>
-<tr class="row-odd"><td><p>IMBoost Optimizado</p></td>
-<td><p><strong>0.8030</strong></p></td>
-<td><p><strong>0.9633</strong></p></td>
-<td><p>0.8927</p></td>
-<td><p><strong>+0.3125</strong></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>El modelo logró un <strong>F1-Macro de 0.8030</strong> en el conjunto de test, representando una mejora de <strong>0.3125 puntos</strong> respecto a la versión sin optimizar (F1-Macro: 0.4905).</p>
-</section>
-<section id="por-que-destaca">
-<h3>Por qué destaca<a class="headerlink" href="#por-que-destaca" title="Permalink to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p><strong>Rendimiento superior</strong>: IMBoost optimizado supera en <strong>0.0482 puntos de F1-Macro</strong> al anterior mejor modelo (XGBoost Scale Weight)</p></li>
-<li><p><strong>Balanceo efectivo</strong>: Mejora significativa en la clase minoritaria (F1-Clase 1: 0.6253 vs 0.1516 en baseline)</p></li>
-<li><p><strong>Optimización rigurosa</strong>: Proceso de tuning con Optuna que validó 30 combinaciones diferentes</p></li>
-<li><p><strong>Generalización robusta</strong>: Alto rendimiento en conjunto de test manteniendo buen performance en clase mayoritaria (F1-Clase 0: 0.9807)</p></li>
-</ol>
-</section>
 <section id="referencia-metodologica-basada-en">
 <h3>Referencia metodológica basada en<a class="headerlink" href="#referencia-metodologica-basada-en" title="Permalink to this heading">#</a></h3>
 <p>Roshan, S., Tanha, J., Hallaji, F., &amp; Ghanbari, M. (2023). <em>IMBoost: A New Weighting Factor for Boosting to Improve the Classification Performance of Imbalanced Data</em>. Complexity, 2023, Article ID 2176891. <a class="reference external" href="https://doi.org/10.1155/2023/2176891">https://doi.org/10.1155/2023/2176891</a></p>
@@ -20075,7 +20035,16 @@ VISUALIZACIÓN DE LA OPTIMIZACIÓN CON OPTUNA
 </tbody>
 </table>
 </div>
-<p>En el comportamiento de <strong>XGBoost Scale Weight</strong> presenta lo siguiente:</p>
+<p>El modelo logró un <strong>F1-Macro de 0.8030</strong> en el conjunto de test, representando una mejora de <strong>0.3125 puntos</strong> respecto a la versión sin optimizar (F1-Macro: 0.4905).</p>
+<section id="por-que-destaca">
+<h3>Por qué destaca<a class="headerlink" href="#por-que-destaca" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Rendimiento superior</strong>: IMBoost optimizado supera en <strong>0.0482 puntos de F1-Macro</strong> al anterior mejor modelo (XGBoost Scale Weight)</p></li>
+<li><p><strong>Balanceo efectivo</strong>: Mejora significativa en la clase minoritaria (F1-Clase 1: 0.6253 vs 0.1516 en baseline)</p></li>
+<li><p><strong>Optimización rigurosa</strong>: Proceso de tuning con Optuna que validó 30 combinaciones diferentes</p></li>
+<li><p><strong>Generalización robusta</strong>: Alto rendimiento en conjunto de test manteniendo buen performance en clase mayoritaria (F1-Clase 0: 0.9807)
+En el comportamiento de <strong>XGBoost Scale Weight</strong> presenta lo siguiente:</p></li>
+</ol>
 <ul class="simple">
 <li><p><strong>Enfoque</strong>: Balanceo mediante pesos de clase en la función de pérdida.</p></li>
 <li><p><strong>Comportamiento</strong>: Buen balance general pero conservador en la clase minoritaria.</p></li>
@@ -20098,6 +20067,7 @@ VISUALIZACIÓN DE LA OPTIMIZACIÓN CON OPTUNA
 <li><p><strong>Métrica sensible</strong>: F1-Macro penaliza fuertemente el mal desempeño en la clase minoritaria.</p></li>
 <li><p><strong>Mejora sustancial en clase 1</strong>: De ~0.15 (baseline) a 0.6253 (optimizado)</p></li>
 </ol>
+</section>
 <section id="analisis-del-proceso-de-optimizacion">
 <h3>Análisis del Proceso de Optimización<a class="headerlink" href="#analisis-del-proceso-de-optimizacion" title="Permalink to this heading">#</a></h3>
 <p>Utilizamos esta libreria <strong>Optuna</strong> como optimización de hiperparámetros para el balanceo exploración vs explotación, aprende de cada trial para mejorar la búsqueda y enfoca recursos en regiones prometedoras.</p>
@@ -20302,8 +20272,6 @@ Esta mejora ayuda a tener en cuenta firmar artistas prometedores temprano, asign
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#propuesta-de-modelo-original">Propuesta de Modelo Original</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imboost-improved-boosting-for-imbalanced-data">IMBoost (Improved Boosting for Imbalanced Data)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicacion-en-el-proyecto">Aplicación en el proyecto</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resultado-destacado">Resultado destacado</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-destaca">Por qué destaca</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#referencia-metodologica-basada-en">Referencia metodológica basada en</a></li>
 </ul>
 </li>
@@ -20311,6 +20279,7 @@ Esta mejora ayuda a tener en cuenta firmar artistas prometedores temprano, asign
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#implementacion-del-modelo-original-y-comparacion">Implementación del Modelo Original y Comparación</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-resultados-imboost-vs-xgboost-scale-weight">Análisis de Resultados: IMBoost vs XGBoost Scale Weight</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-destaca">Por qué destaca</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-del-proceso-de-optimizacion">Análisis del Proceso de Optimización</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-graficos">Análisis de gráficos</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implicaciones-en-contexto-musical-spotify">Implicaciones en Contexto Musical - Spotify</a></li>
